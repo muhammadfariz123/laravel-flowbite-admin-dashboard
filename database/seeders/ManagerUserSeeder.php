@@ -10,11 +10,14 @@ class ManagerUserSeeder extends Seeder
 {
     public function run(): void
     {
-        User::create([
-            'name'     => 'Manajer Gudang',
-            'email'    => 'manager@example.com',
-            'password' => Hash::make('password'), // login pakai: password
-            'role'     => 'Manajer Gudang',
-        ]);
+        User::firstOrCreate(
+            ['email' => 'manager@example.com'],
+            [
+                'name' => 'Manajer Gudang',
+                'password' => Hash::make('password'),
+                'role' => 'Manajer Gudang',
+            ]
+        );
+
     }
 }
