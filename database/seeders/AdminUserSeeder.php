@@ -18,6 +18,5 @@ class AdminUserSeeder extends Seeder
                 'role' => 'Admin',
             ]
         );
-
     }
 }
